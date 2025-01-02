@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
 
-// Endpoint backend
+// Endpoint API
 app.get('/api/message', (req, res) => {
-  res.json({ message: 'Halo dari Backend!' });
+  res.json({ message: 'Hello from Backend!' });
 });
+
+// Serve frontend
+app.use(express.static(__dirname));
 
 module.exports = app;
